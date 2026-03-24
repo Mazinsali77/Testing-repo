@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem id="base.menu_administration" name="Settings" sequence="999"
+                  web_icon="ignite_backend_theme,static/src/img/icons/settings.png"/>
+        <menuitem id="base.menu_management" name="Apps" sequence="998" web_icon="ignite_backend_theme,static/src/img/icons/apps.png"/>
+        <menuitem id="mail.menu_root_discuss" name="Discuss" sequence="997"
+                  web_icon="ignite_backend_theme,static/src/img/icons/discuss.png"/>
+        <menuitem id="project_todo.menu_todo_todos" name="To-do" sequence="996"
+                  web_icon="ignite_backend_theme,static/src/img/icons/todo.png"/>
+        <menuitem id="calendar.mail_menu_calendar" name="Calendar" sequence="995"
+                  web_icon="ignite_backend_theme,static/src/img/icons/calendar.png"/>
+        <menuitem id="ks_dashboard_ninja.board_menu_root" name="Home" sequence="1"
+                  web_icon="ignite_backend_theme,static/src/img/icons/home.png"/>
+                  
+    </data>
+</odoo>

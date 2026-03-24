@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="ignite_login_layout" name="Ignite login layout" inherit_id="web.login_layout">
+            <xpath expr="//div[hasclass('container')]" position="replace">
+                <div class="h-full">
+                    <img src="/ignite_backend_theme/static/src/img/lines_ignite.png" alt=""
+                        class="absolute flex items-center opacity-80 lg:opacity-100 bottom-0 left-0 w-auto" />
+                    <img src="/ignite_backend_theme/static/src/img/shapes_ignite.png" alt=""
+                        class="absolute flex items-center opacity-80 lg:opacity-100 top-0 right-0 w-auto" />
+                    <div class="grid gap-0 h-full md:h-screen md:grid-cols-2">
+                        <t t-out="0" />
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="ignite_login" name="Ignite login" inherit_id="web.login">
+            <xpath expr="//form" position="replace">
+                <!-- Component -->
+                <div class="hidden md:flex items-center justify-center bg-white">
+                    <div class="mx-auto max-w-lg px-5 py-16 md:px-10 md:py-24 lg:py-32">
+                        <img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}" alt="Logo" class="mx-auto w-64 hidden md:flex"/>
+                    </div>
+                </div>
+                <!-- Component -->
+                <div class="flex items-center justify-center px-5 py-24 md:px-10 md:py-24 lg:py-32" id="wrap">
+                    <div class="max-w-lg text-center z-50 flex flex-col">
+                        <img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}" alt="Logo" class="flex md:hidden"/>
+                        <h2 class="mb-8 text-3xl font-bold md:mb-12 md:text-5xl lg:mb-16">Hello Again
+                        </h2>
+                        <!-- Form -->
+                        <div class="mx-auto mb-4 max-w-lg pb-4">
+                            <form name="wf-form-password" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="relative">
+                                    <img alt=""
+                                        src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a9455fae6cf89_EnvelopeSimple.svg"
+                                        class="absolute left-[5%] top-[26%] inline-block" />
+                                    <input type="text" t-att-value="login" id="login" name="login"
+                                        class="mb-4 block h-9 w-full rounded-full border border-solid border-black py-6 pl-14 text-sm text-midnight-blue focus:border-midnight-blue focus:outline-none focus:ring-midnight-blue"
+                                        placeholder="Email Address" required="" />
+                                </div>
+                                <div class="relative mb-4">
+                                    <img alt=""
+                                        src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a946794e6cf8a_Lock-2.svg"
+                                        class="absolute left-[5%] top-[26%] inline-block" />
+                                    <input id="password" name="password" type="password" 
+                                        t-att-autofocus="'autofocus' if login else None" maxlength="4096" 
+                                        autocomplete="current-password" required="required" 
+                                        class="mb-4 block h-9 w-full rounded-full border border-solid border-black py-6 pl-14 text-sm text-midnight-blue focus:border-midnight-blue focus:outline-none focus:ring-midnight-blue"
+                                        placeholder="Password" />
+                                </div>
+                                <p class="py-4 px-8 shadow-sm bg-red text-white text-base rounded-md" t-if="error" role="alert">
+                                        <t t-esc="error"/>
+                                    </p>
+                                    <p class="py-4 px-8 shadow-sm bg-happy-blue text-white text-base rounded-md" t-if="message" role="status">
+                                        <t t-esc="message"/>
+                                    </p>
+                                <input type="submit" value="Login"
+                                    class="inline-block w-full cursor-pointer items-center bg-midnight-blue hover:bg-midnight-dark px-6 py-3 text-center font-semibold text-white rounded-full z-10" />
+                            </form>
+                        </div>
+                        <p class="text-sm text-midnight-dark sm:text-sm"><a href="#"
+                                class="font-bold text-midnight-blue text:bg-midnight-dark">Forgot Password</a>
+                        </p>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

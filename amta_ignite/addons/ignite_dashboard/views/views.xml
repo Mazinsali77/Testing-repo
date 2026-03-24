@@ -1,0 +1,128 @@
+<odoo>
+  <data>
+
+    <!-- views -->
+    <record id="orders_form_view" model="ir.ui.view">
+      <field name="name">ignite_dashboard.orders.form</field>
+      <field name="model">ignite_dashboard.order</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <field name="state" widget="statusbar" clickable="1"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="customer_id"/>
+                <field name="size"/>
+                <field name="quantity"/>
+              </group>
+              <group>
+                <field name="amount"/>
+                <field name="is_late"/>
+              </group>
+              <group>
+                <field name="image_url"/>
+              </group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+        </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="orders_form_view_simplified" model="ir.ui.view">
+      <field name="name">ignite_dashboard.orders.form.simplified</field>
+      <field name="model">ignite_dashboard.order</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="customer_id"/>
+            <field name="size"/>
+            <field name="quantity"/>
+            <field name="image_url"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="orders_kanban_view" model="ir.ui.view">
+      <field name="name">ignite_dashboard.orders.kanban</field>
+      <field name="model">ignite_dashboard.order</field>
+      <field name="arch" type="xml">
+        <kanban default_group_by="state" class="o_kanban_small_column" on_create="quick_create" quick_create_view="ignite_dashboard.orders_form_view_simplified">
+          <field name="customer_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div>Customer: <field name="customer_id"/></div>
+                <div>Size: <field name="size"/></div>
+                <div>Quantity: <field name="quantity"/></div>
+                <div>Amount: <field name="amount"/></div>
+                <div>Created: <field name="create_date"/></div>
+                <div><field class="pull-right" name="is_late" options="{'not_late_color':'yellow'}"/></div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="orders_list_view" model="ir.ui.view">
+      <field name="name">ignite_dashboard.orders.list</field>
+      <field name="model">ignite_dashboard.order</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="customer_id"/>
+          <field name="size"/>
+          <field name="quantity"/>
+          <field name="amount"/>
+          <field name="is_late"/>
+          <field name="create_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="orders_search_view" model="ir.ui.view">
+      <field name="name">ignite_dashboard.orders.search</field>
+      <field name="model">ignite_dashboard.order</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="customer_id"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="view_partner_form_geolocate" model="ir.ui.view">
+        <field name="name">ignite_dashboard.res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//form" position="attributes">
+            <attribute name="js_class">customer_form_view</attribute>
+          </xpath>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <record model="ir.actions.act_window" id="orders">
+      <field name="name">Ignite Orders</field>
+      <field name="res_model">ignite_dashboard.order</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.client" id="dashboard">
+      <field name="name">Dashboard</field>
+      <field name="tag">ignite_dashboard.dashboard</field>
+    </record>
+
+    <!-- menu items -->
+    <menuitem name="Home" id="ignite_dashboard.menu_root" groups="base.group_user" web_icon="ignite_dashboard,static/description/home.png" sequence="2"/>
+    <menuitem name="Dashboard" id="ignite_dashboard.dashboard_menu" parent="ignite_dashboard.menu_root" action="ignite_dashboard.dashboard" sequence="1"/>
+    <menuitem name="T-shirt Orders" id="ignite_dashboard.order" parent="ignite_dashboard.menu_root" action="ignite_dashboard.orders" sequence="2"/>
+
+  </data>
+</odoo>

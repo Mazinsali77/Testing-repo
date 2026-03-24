@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <!--    Dashboard Header : Show title and dashboard settings button-->
+    <t t-name="ksDashboardNinjaHeader" t-inherit="ks_dashboard_ninja.ksDashboardNinjaHeader">
+        <xpath
+            expr="//div[hasclass('ks_dashboard_top_menu')]//div[hasclass('ks_dashboard_top_settings')]"
+            position="inside">
+            <button class="btn btn-primary ks_add_item_type_button dropdown-toggle mr-1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="fa fa-lg fa-bookmark" />
+                    Bookmarks
+                <span class="caret" />
+            </button>
+        </xpath>
+    </t>
+
+</templates>

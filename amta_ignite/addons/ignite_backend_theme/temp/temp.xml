@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="ignite_dashboard.clientaction" owl="1">
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                    <div class="admin divide-x divide-dashed">
+                    <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+      <!-- Heroicon name: mini/plus -->
+      <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+      </svg>
+      New Project
+    </button>
+    
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openDashboardsView"> Dashboards </button>
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openUsersView"> Users </button>
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openGroupsView"> Groups </button>
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openCompaniesView"> Companies </button>
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openAppsView"> Apps </button>
+                        <button class="btn btn-primary hover:bg-gray-900 text-white px-4 py-2" t-on-click="openSettings"> Settings </button>
+                    </div>
+                <!-- <div class="text-2xl text-gray-800">Hello
+                    <t t-esc="env.services.user.name" />,</div> -->
+                    <!-- 
+                    <div class="sales">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="sales-manager">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="purchase">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="purchase-manager">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="stock">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="stock-manager">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="hr">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="hr-manager">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div>
+                    <div class="pos">
+                        <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                        <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+                    </div> -->
+                    <!-- <div class="pos-manager">
+                        <button class="btn btn-primary" t-on-click="openPointOfSaleView"> Point of Sale </button>
+                        <button class="btn btn-primary" t-on-click="openPointOfSaleOrdersView"> Orders </button>
+                        <button class="btn btn-primary" t-on-click="openPointOfSaleCustomersView"> Customers </button>
+                        <button class="btn btn-primary" t-on-click="openPointOfSaleSalesDetailsReportView"> Sales Details </button>
+                        <button class="btn btn-primary" t-on-click="openPointOfSaleOrdersAnalysisReportView"> Orders Analysis </button>
+                    </div> -->
+                    <!-- <div class="other py-2">
+                        <button class="btn btn-primary" t-on-click="openContactsView"> Contacts </button>
+                        <button class="btn btn-primary" t-on-click="openCalendarView"> Calendar </button>
+                        <button class="btn btn-primary" t-on-click="openDiscussView"> Discuss </button>
+                    </div> -->
+
+                
+            </t>
+            <div>
+                <dl
+                    class="mt-5 grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
+                    <div class="px-4 py-5 sm:p-6">
+                        <dt class="text-base font-normal text-gray-900">Total Subscribers</dt>
+                        <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                            <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                                71,897
+                                <span class="ml-2 text-sm font-medium text-gray-500">from 70,946</span>
+                            </div>
+
+                            <div
+                                class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
+                                <!-- Heroicon name: mini/arrow-up -->
+                                <svg class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="sr-only"> Increased by </span>
+                                12%
+                            </div>
+                        </dd>
+                    </div>
+
+                    <div class="px-4 py-5 sm:p-6">
+                        <dt class="text-base font-normal text-gray-900">Avg. Open Rate</dt>
+                        <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                            <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                                58.16%
+                                <span class="ml-2 text-sm font-medium text-gray-500">from 56.14%</span>
+                            </div>
+
+                            <div
+                                class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
+                                <!-- Heroicon name: mini/arrow-up -->
+                                <svg class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="sr-only"> Increased by </span>
+                                2.02%
+                            </div>
+                        </dd>
+                    </div>
+
+                    <div class="px-4 py-5 sm:p-6">
+                        <dt class="text-base font-normal text-gray-900">Avg. Click Rate</dt>
+                        <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                            <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                                24.57%
+                                <span class="ml-2 text-sm font-medium text-gray-500">from 28.62%</span>
+                            </div>
+
+                            <div
+                                class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
+                                <!-- Heroicon name: mini/arrow-down -->
+                                <svg class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-red-500"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="sr-only text-slate-800 px-12 px-16 bg-midnight-blue hover:bg-midnight-blue bg:dungeon text-dungeon hover:bg-dungeon"> Decreased by </span>
+                                4.05%
+                            </div>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+<div class="overflow-hidden rounded-lg bg-white hover:bg-indigo-100 px-4 py-5 shadow-sm sm:p-6 animate__animated animate__fadeInLeft">
+            <t t-if="props.slots.title"> 
+                <h5 class="truncate text-md font-medium text-gray-500"><t t-slot="title"/></h5>
+            </t>
+            <p class="text-base mt-1 text-3xl font-semibold tracking-tight text-gray-900"><t t-slot="default"/></p>
+        </div>
+        </Layout>
+    </t>
+
+ <template id="ignite_login_layout" name="Ignite login layout" inherit_id="web.login_layout">
+            <xpath expr="//div[hasclass('container')]" position="replace">
+                <div class="grid gap-0 md:h-screen md:grid-cols-2">
+                    <t t-out="0"/>                    
+                </div>
+            </xpath>
+        </template>
+
+        <template id="ignite_login" name="Ignite login" inherit_id="web.login">
+            <xpath expr="//form" position="replace">
+                <!-- Component -->
+    <div class="flex items-center justify-center bg-[#f2f2f7]">
+      <div class="mx-auto max-w-md px-5 py-16 md:px-10 md:py-24 lg:py-32">
+        <div class="mb-5 flex h-14 w-14 flex-col items-center justify-center bg-white md:mb-6 lg:mb-8">
+          <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a949eade6cf7d_Vector-2.svg" alt="" class="inline-block" />
+        </div>
+        <p class="mb-8 text-sm sm:text-base md:mb-12 lg:mb-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.</p>
+        <p class="text-sm font-bold sm:text-base">John Robert</p>
+        <p class="text-sm sm:text-sm">Senior Webflow Developer</p>
+      </div>
+    </div>
+    <!-- Component -->
+    <div class="flex items-center justify-center px-5 py-16 md:px-10 md:py-24 lg:py-32">
+      <div class="max-w-md text-center">
+        <h2 class="mb-8 text-3xl font-bold md:mb-12 md:text-5xl lg:mb-16">Start your 14-day free trial</h2>
+        <!-- Form -->
+        <div class="mx-auto mb-4 max-w-[400px] pb-4">
+          <form name="wf-form-password" method="get">
+            <div class="relative">
+              <img alt="" src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a9455fae6cf89_EnvelopeSimple.svg" class="absolute left-[5%] top-[26%] inline-block" />
+              <input type="email" class="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-14 text-sm text-[#333333]" placeholder="Email Address" required="" />
+            </div>
+            <div class="relative mb-4">
+              <img alt="" src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a946794e6cf8a_Lock-2.svg" class="absolute left-[5%] top-[26%] inline-block" />
+              <input type="password" class="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-14 text-sm text-[#333333]" placeholder="Password (min 8 characters)" required="" />
+            </div>
+            <label class="mb-6 flex items-center justify-start pb-12 pl-5 font-medium md:mb-10 lg:mb-1">
+              <input type="checkbox" name="checkbox" class="float-left -ml-[20px] mt-1" />
+              <span class="ml-4 inline-block cursor-pointer text-sm" for="checkbox">I agree with the <a href="#" class="font-bold text-[#0b0b1f]">Terms &amp; Conditions</a>
+              </span>
+            </label>
+            <input type="submit" value="Join Flowspark" class="inline-block w-full cursor-pointer items-center bg-black px-6 py-3 text-center font-semibold text-white" />
+          </form>
+        </div>
+        <p class="text-sm text-[#636262] sm:text-sm">Already have an account? <a href="#" class="font-bold text-[#0b0b1f]">Login now</a>
+        </p>
+      </div>
+    </div>
+            </xpath>
+        </template>
+</templates>

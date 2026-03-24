@@ -1,0 +1,213 @@
+#sidebar_panel {
+    height: calc(100% - 0%);
+	position: fixed;
+    top: 0px;
+    background-color: transparent;
+    display: block;
+    width: 200px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+    z-index: 999;
+    padding: 20px;
+}
+#sidebar_panel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+.sidebar_panel .sidebar {
+    padding: 0;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    // padding-top: 5px;
+    // padding: 15px;
+    background: #fff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.sidebar_panel .sidebar_close {
+    text-align: end;
+    display: none;
+    position: sticky;
+    height: 35px;
+    padding-top: 5px;
+    top: 0;
+    background: #2a3042;
+    z-index: 1;
+}
+.sidebar_panel .sidebar_close a#closeSidebar {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ffffff;
+}
+.sidebar_panel .sidebar_close a#closeSidebar img {
+    width: 15px;
+}
+.sidebar_panel .sidebar .sidebar_logo {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.sidebar_panel .sidebar .sidebar_logo img {
+    max-width: 60px;
+    margin: 0 auto;
+}
+.sidebar_panel .sidebar .sidebar_head {
+    padding-top: 20px;
+    padding-left: 15px;
+    color: #6a7187;
+    font-size: 14px;
+}
+.sidebar_panel .sidebar .sidebar_menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar_panel .sidebar .sidebar_menu li {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    display: block;
+}
+.sidebar_panel .sidebar .sidebar_menu li a {
+    margin: 0;
+    border: 0px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    // padding: 8px 10px 8px 25px;
+    color: #213956;
+    font-size: 13px;
+    transition:.3s all;
+    padding: 12px;
+
+}
+.sidebar_panel .sidebar .sidebar_menu li:hover  a {
+    background: #BAC2CB;
+    border-radius: 15px;
+}
+
+.sidebar_panel .nav-link {
+    transition:.3s all;
+}
+.sidebar_panel .sidebar a.nav-link.active {
+    background: #BAC2CB;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.sidebar_panel .sidebar .sidebar_menu li a .sidebar_img {
+    max-width: 30px;
+    // margin: 0 auto;
+}
+#sidebar_panel li {
+    list-style: none;
+  }
+  .sidebar_app_name {
+    display: none;
+    transition: display 0.3s ease-in-out;
+    font-size: 16px;
+  }
+
+  .show_full_sidebar .sidebar_app_name {
+    display: inline;
+    transition: display 0.3s ease-in-out;
+  }
+
+  #openSidebar {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 25px;
+    z-index: 9999;
+  }
+
+  .o_web_client.o_rtl #openSidebar {
+    position: absolute;
+    left: 10px;
+    right: auto;
+    top: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 25px;
+    z-index: 9999;
+  }
+
+  #closeSidebar {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 25px;
+    z-index: 9999;
+  }
+
+  .o_web_client.o_rtl #closeSidebar {
+    position: absolute;
+    left: 10px;
+    right: auto;
+    top: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 25px;
+    z-index: 9999;
+  }
+
+ 
+
+.sidebar-icon.hidden {
+    pointer-events: none; /* To prevent clicking on hidden elements */
+}
+
+.sidebar-icon.show {
+    display: block;
+}
+
+.sidebar-icon.hide {
+    display: none;
+}
+
+
+/* For LTR (Left-to-Right) layout */
+.o_action_manager:not(.o_action_manager_opened) {
+    margin-left: 200px;
+    margin-right: 0px;
+    transition: all .1s linear;
+}
+
+/* For RTL (Right-to-Left) layout */
+.o_web_client.o_rtl .o_action_manager:not(.o_action_manager_opened) {
+    margin-right: 200px;
+    margin-left: 0px;
+    transition: all .1s linear;
+}
+
+.top_heading:not(.top_heading_opened){
+    margin-left: 200px;
+    margin-right: 0px;
+    transition: all .1s linear;
+    width: auto;
+}
+
+.o_web_client.o_rtl .top_heading:not(.top_heading_opened){
+    margin-right: 200px;
+    margin-left: 0px;
+    transition: all .1s linear;
+    width: auto;
+}
+
+
+  .sidebar_menu .nav-link {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #closeSidebar img, #openSidebar img {
+    min-width: 10px;
+  }

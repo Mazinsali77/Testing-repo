@@ -1,0 +1,18 @@
+.o_rtl body { font-family: 'Bahij TheSansArabic';}
+.o_rtl .pos{font-family: 'Bahij TheSansArabic';}
+.o_rtl .pos .modal-dialog .popup {font-family: 'Bahij TheSansArabic';}
+.o_rtl .ui-dialog, .modal-dialog{font-family: 'Bahij TheSansArabic';}
+.o_rtl .pos textarea {font-family: 'Bahij TheSansArabic';}
+.o_rtl .element.style {
+    background-color:  var(--background-topheader);
+  }
+  
+  .o_rtl .pos button, .pos a.button {
+  
+    font-family: 'Bahij TheSansArabic';
+  }
+  .o_rtl .pos .loader {
+    background-color: var(--background-topheader);
+    color: #ffffff;
+    font-family: 'Bahij TheSansArabic';
+  }
